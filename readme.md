@@ -1,3 +1,0 @@
-# GameJam
-
-neue Readme
