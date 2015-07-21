@@ -47,7 +47,7 @@ namespace VROne
 	#endif
 	#if UNITY_ANDROID && !UNITY_EDITOR
 			Quaternion rot = HeadTrackingAndroid.GetQuaternionUpdate();
-			transform.rotation = Quaternion.Inverse(initialRotation) * rot; //works for landscape left
+			transform.localRotation = Quaternion.Inverse(initialRotation) * rot; //works for landscape left
 			if (recenter || resetViewOnTouch && (Input.touchCount > 0))
 			{
 				initialRotation = rot;

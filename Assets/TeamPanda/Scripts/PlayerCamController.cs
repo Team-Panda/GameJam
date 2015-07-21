@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerCamController : MonoBehaviour {
 
 	public float maxSpeed = 200f;
 	public float velocity = 10f;
-	public float rotationSpeed = 2f;
+
+	public float yawSpeed = 150f;
+	public float tiltSpeed = 100f;
+	public float pitchSpeed = 150f;
 
 	private Rigidbody rb;
 	private Transform vrHead;
+	private float currentSpeed = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -16,55 +21,72 @@ public class PlayerCamController : MonoBehaviour {
 		vrHead = transform.FindChild ("VROneSDKHead");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-	void FixedUpdate() {
-
-		// get angle diffrence between vrHead in PlayerCamController
-		//transform.rotation = vrHead.localRotation.y;
-
-			//Debug.Log (transform.rotation.y + " | " + vrHead.localRotation.eulerAngles.y +  " | " + (transform.rotation.y - vrHead.localRotation.y));
-		/*Vector3 outer = vrHead.forward;
-		Vector3 inner = 
-
-		int sign = Vector3.Cross(v1, v2).z < 0 ? -1 : 1;
-		Debug.Log(sign * Vector3.Angle(v1, v2));
 
 
-		int sign = Vector3.Cross(transform.forward, vrHead.forward).z < 0 ? -1 : 1;
-		Debug.Log(sign * Vector3.Angle(transform.forward, vrHead.forward));
-		**/
+	void Update() {
+
+
 		Vector3 localVrHeadForward = transform.InverseTransformDirection (vrHead.forward);
-
-		// angle left right
-		Vector3 newXZ = new Vector3 (localVrHeadForward.x, 0, localVrHeadForward.z);
-
-		int sign = Vector3.Cross(newXZ, transform.forward).y < 0 ? -1 : 1;
-
-		float xzAngle = sign * Vector3.Angle (transform.forward, newXZ);
+		Vector3 localZ = transform.InverseTransformDirection (transform.forward);
 
 
-		Debug.Log(transform.forward);
-		//Debug.Log(Vector3.Angle(transform.forward, newXZ));
+		transform.Rotate (Vector3.up * headYaw (localZ, localVrHeadForward) * yawSpeed * Time.deltaTime);
+		transform.Rotate (Vector3.right * headPitch (localZ, localVrHeadForward) * pitchSpeed * Time.deltaTime);
+		transform.Rotate (Vector3.forward * headTilt () * tiltSpeed * Time.deltaTime);
 
 
-		//Debug.Log (transform.InverseTransformDirection(vrHead.forward));
-
-		if (rb.velocity.magnitude > maxSpeed) {
-			rb.velocity = rb.velocity.normalized * maxSpeed;
-		} else {
-			rb.AddForce (vrHead.forward * velocity);
+		// increase speed to maxspeed
+		if (currentSpeed < maxSpeed) {
+			currentSpeed = currentSpeed + velocity;
+		}
+		// lower speed to maxspeed
+		if (maxSpeed < currentSpeed) {
+			currentSpeed =  currentSpeed - velocity;
 		}
 
-		
+		Vector3 newPos = transform.position + transform.forward * Time.deltaTime * currentSpeed;
+		transform.position = newPos;
+
+
+
 	}
 
-	public static float DeltaYaw(Transform source, Vector3 destination)
+	void OnGUI()
 	{
-		var destination2 = source.InverseTransformPoint(destination);
-		return (Mathf.Atan2(destination2.z,destination2.x) * Mathf.Rad2Deg) - 90;
+		GUI.Label (new Rect (0, 0, 300, 20), "ANG:" + vrHead.rotation.eulerAngles);
 	}
+
+
+	private float headTilt() {
+		
+//		Vector3 newXY = new Vector3 (target.x, target.y, 0);	
+//		int sign = Vector3.Cross(reference, target).z < 0 ? -1 : 1;		
+//		float xyAngle = sign * Vector3.Angle (reference, newXY);
+//
+//		Debug.Log (xyAngle);
+//		return Mathf.Clamp (xyAngle / 90, -1, 1);
+
+		return -Input.acceleration.x;
+	}
+
+	private float headYaw(Vector3 reference, Vector3 target) {
+
+		Vector3 newXZ = new Vector3 (target.x, 0, target.z);	
+		int sign = Vector3.Cross(reference, target).y < 0 ? -1 : 1;		
+		float xzAngle = sign * Vector3.Angle (reference, newXZ);
+
+		return Mathf.Clamp (xzAngle / 90, -1, 1);
+	}
+
+
+	private float headPitch(Vector3 reference, Vector3 target) {
+		
+		Vector3 newYZ = new Vector3 (0, target.y, target.z);	
+		int sign = Vector3.Cross(reference, target).x < 0 ? -1 : 1;		
+		float yzAngle = sign * Vector3.Angle (reference, newYZ);
+		
+		return Mathf.Clamp (yzAngle / 90, -1, 1);
+	}
+
+
 }
