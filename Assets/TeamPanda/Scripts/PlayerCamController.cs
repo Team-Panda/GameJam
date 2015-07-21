@@ -62,13 +62,6 @@ public class PlayerCamController : MonoBehaviour {
 
 
 	private float headTilt() {
-		
-//		Vector3 newXY = new Vector3 (target.x, target.y, 0);	
-//		int sign = Vector3.Cross(reference, target).z < 0 ? -1 : 1;		
-//		float xyAngle = sign * Vector3.Angle (reference, newXY);
-//
-//		Debug.Log (xyAngle);
-//		return Mathf.Clamp (xyAngle / 90, -1, 1);
 
 		return -Input.acceleration.x;
 	}

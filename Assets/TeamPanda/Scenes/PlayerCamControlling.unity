@@ -204,6 +204,18 @@ Prefab:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11405140, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
+      propertyPath: viewDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405140, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
+      propertyPath: swayXMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405140, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
+      propertyPath: swayYMax
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
   m_IsPrefabParent: 0
@@ -245,6 +257,10 @@ Prefab:
     - target: {fileID: 464526, guid: cd08d47a83c022341b08744eb5917465, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11470210, guid: cd08d47a83c022341b08744eb5917465, type: 2}
+      propertyPath: maxSpeed
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd08d47a83c022341b08744eb5917465, type: 2}
