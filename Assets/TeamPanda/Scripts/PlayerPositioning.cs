@@ -10,8 +10,9 @@ public class PlayerPositioning : MonoBehaviour {
 	public float swayXMax = 1f;
 	public float swayYMax = 1f;
 	public float swayPause = 2f;
+	public float swaySmoothTime = 1f;
 
-	private float swayTimer = 0f;
+	private Vector3 swayVelocity = Vector3.zero;
 	
 	private PlayerCamController playerCam;
 	private Rigidbody rb;
@@ -24,28 +25,17 @@ public class PlayerPositioning : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		swayTimer += Time.deltaTime;
 
 		// distance to cam, according to flight speed
-	
 		float speedMult = Mathf.Clamp (playerCam.CurrentSpeed / 100, minSpeedMultiplier, maxSpeedMultiplier);
 		Vector3 targetPos = playerCam.transform.position + playerCam.transform.forward * viewDistance * speedMult;
 
-
-		if (swayTimer > swayPause) {
-			Debug.Log ("Sway");
-			rb.AddForce(new Vector3(Random.Range (-swayXMax, swayXMax) * Time.smoothDeltaTime, Random.Range (-swayYMax, swayYMax) *Time.smoothDeltaTime, 0 ));
-			swayTimer = 0f;
-		}
-
 		// organic random "drift"
-//		targetPos.x += Random.Range (-swayXMax, swayXMax) * Time.smoothDeltaTime; 
-//		targetPos.y += Random.Range (-swayYMax, swayYMax) *Time.smoothDeltaTime; 
+		targetPos.x += Random.Range (-swayXMax, swayXMax); 
+		targetPos.y += Random.Range (-swayYMax, swayYMax); 
 
+		transform.position =  Vector3.SmoothDamp(transform.position, targetPos, ref swayVelocity, swaySmoothTime);
 
-		Debug.Log (speedMult);
-
-		rb.MovePosition (targetPos);
 	
 	}
 }
