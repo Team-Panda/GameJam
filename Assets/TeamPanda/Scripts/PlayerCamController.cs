@@ -15,6 +15,10 @@ public class PlayerCamController : MonoBehaviour {
 	private Transform vrHead;
 	private float currentSpeed = 0f;
 
+	public float CurrentSpeed {
+		get { return currentSpeed; }
+	}
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();

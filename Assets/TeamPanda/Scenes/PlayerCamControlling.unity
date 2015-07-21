@@ -162,7 +162,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 967487087}
     m_Modifications:
     - target: {fileID: 403746, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
       propertyPath: m_LocalPosition.x
@@ -170,7 +170,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403746, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.9000001
       objectReference: {fileID: 0}
     - target: {fileID: 403746, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -194,7 +194,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403746, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413758, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413758, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8539e5e6883fefb4fb0e3ceb7a4fadc4, type: 2}
@@ -212,7 +220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 464526, guid: cd08d47a83c022341b08744eb5917465, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.9000001
       objectReference: {fileID: 0}
     - target: {fileID: 464526, guid: cd08d47a83c022341b08744eb5917465, type: 2}
       propertyPath: m_LocalPosition.z
@@ -315,6 +323,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!4 &967487087 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 464526, guid: cd08d47a83c022341b08744eb5917465, type: 2}
+  m_PrefabInternal: {fileID: 864722677}
 --- !u!1 &1320056360
 GameObject:
   m_ObjectHideFlags: 0
