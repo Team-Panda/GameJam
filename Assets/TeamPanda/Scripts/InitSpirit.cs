@@ -16,12 +16,17 @@ public class InitSpirit : MonoBehaviour {
 	public float turn;  			//Neigung der Rotation anpassen
 	public Boundary b; 				// auf die Variablen der Klasse Boundary zugreifen
 	public GameObject SpiritObject;		// auf GameObjekte aus dem Prefab-Ordner zugreifen
-	public GameObject [] spiritsArray;	
+	public GameObject [] spiritsArray;
 
-	void Start () {
+	void Start()
+	{
+		InvokeRepeating("CreateObject", 1.0f, 7.0f);
+	}
+
+	void CreateObject () {
 
 		//Spirits erzeugen 
-		spiritsArray = new GameObject[2];
+		spiritsArray = new GameObject[1];
 		for (int i = 0; i < spiritsArray.Length; i++) {
 
 			GameObject clone = (GameObject)Instantiate(SpiritObject, new Vector3(Random.value,Random.value,Random.value), Quaternion.identity);
@@ -33,8 +38,6 @@ public class InitSpirit : MonoBehaviour {
 
 	void fixedUpdate (){
  
-
-
 		Vector3 moving = new Vector3 (Random.value, Random.value, Random.value);
 
 		foreach (GameObject obj in  spiritsArray){
