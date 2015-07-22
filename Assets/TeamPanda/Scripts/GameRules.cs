@@ -5,6 +5,7 @@ public class GameRules : MonoBehaviour {
 
 	// number of availables player "size-levels"
 	private static int maxLevel = 10;
+	public static int maxSpirit;
 
 	// required collections points for level transitions
 	private static int[] levelConditions = new int[] {1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233};

@@ -156,17 +156,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7516c10e411a34438311317fc5a875b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  turn: 3
+  speed: .5
   b:
-    xMin: 1
-    xMax: 0
-    yMin: 0
-    yMax: 0
-    zMin: 0
-    zMax: 0
-  SpiritObject: {fileID: 195922, guid: ddedb7ff225cc574d93e5c1e58c7ec2c, type: 2}
-  spiritsArray: []
+    xMin: 2
+    xMax: 3
+    yMin: 6
+    yMax: 7
+    zMin: 4
+    zMax: 2
+  SpiritObject: {fileID: 165964, guid: 70aa854b6d25530468fb65cab93216cc, type: 2}
 --- !u!4 &533295870
 Transform:
   m_ObjectHideFlags: 0
@@ -174,7 +172,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 533295868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -264,6 +262,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &833055808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 833055810}
+  - 114: {fileID: 833055809}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &833055809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833055808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7516c10e411a34438311317fc5a875b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: .5
+  b:
+    xMin: 3
+    xMax: 4
+    yMin: 6
+    yMax: 3
+    zMin: 2
+    zMax: 5
+  SpiritObject: {fileID: 139232, guid: 55ed5adb0e4c81d47b71220e3803d7c0, type: 2}
+--- !u!4 &833055810
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833055808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &1391243744
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,17 +337,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7516c10e411a34438311317fc5a875b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  turn: 5
+  speed: .5
   b:
     xMin: 0
-    xMax: 0
-    yMin: 0
-    yMax: 0
-    zMin: 0
-    zMax: 0
-  SpiritObject: {fileID: 195922, guid: ddedb7ff225cc574d93e5c1e58c7ec2c, type: 2}
-  spiritsArray: []
+    xMax: 5
+    yMin: 3
+    yMax: 1
+    zMin: 8
+    zMax: 6
+  SpiritObject: {fileID: 163374, guid: 89df1640504e03b46b0c10b6075d2fbc, type: 2}
 --- !u!4 &1391243746
 Transform:
   m_ObjectHideFlags: 0
@@ -309,7 +353,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1391243744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalPosition: {x: -3, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
