@@ -92,6 +92,7 @@ GameObject:
   - 114: {fileID: 11489398}
   - 54: {fileID: 5475332}
   - 114: {fileID: 11468934}
+  - 114: {fileID: 11465022}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -377,6 +378,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83af1711446b7404ea6d257e5ba09025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11465022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d46c2e6615f2b419b3f4558ed92d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11465818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,7 +408,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 194156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e41d8ad21418db439c25e3aeefc5870, type: 3}
+  m_Script: {fileID: 11500000, guid: 9adc48a7ba01dd9499015012d292641e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   StartSpeed: 80
@@ -479,7 +491,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194156}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
