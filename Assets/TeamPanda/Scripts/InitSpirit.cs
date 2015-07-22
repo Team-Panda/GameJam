@@ -12,11 +12,11 @@ public class Boundary {
 
 public class InitSpirit : MonoBehaviour {
 
-	public float speed; 			//Geschwindigkeit anpassen
-	public float turn;  			//Neigung der Rotation anpassen
-	public Boundary b; 				// auf die Variablen der Klasse Boundary zugreifen
+	public float speed; 				//Geschwindigkeit anpassen
+	public float turn;  				//Neigung der Rotation anpassen
+	public Boundary b; 					// auf die Variablen der Klasse Boundary zugreifen
 	public GameObject SpiritObject;		// auf GameObjekte aus dem Prefab-Ordner zugreifen
-	public GameObject [] spiritsArray;
+	public GameObject [] spiritsArray;	// SpiritArray
 
 	void Start()
 	{
@@ -29,8 +29,10 @@ public class InitSpirit : MonoBehaviour {
 		spiritsArray = new GameObject[1];
 		for (int i = 0; i < spiritsArray.Length; i++) {
 
-			GameObject clone = (GameObject)Instantiate(SpiritObject, new Vector3(Random.value,Random.value,Random.value), Quaternion.identity);
+			GameObject clone = (GameObject)Instantiate(SpiritObject, transform.position + new Vector3 (Random.value, Random.value, Random.value), Quaternion.identity);
 			spiritsArray [i]= clone;
+
+			Debug.Log(transform.position);
 		
 		}
 	}
@@ -40,7 +42,7 @@ public class InitSpirit : MonoBehaviour {
  
 		Vector3 moving = new Vector3 (Random.value, Random.value, Random.value);
 
-		foreach (GameObject obj in  spiritsArray){
+		foreach (GameObject obj in spiritsArray){
 
 		Rigidbody rb = obj.GetComponent <Rigidbody>();
 			
