@@ -3,56 +3,126 @@ using System.Collections;
 
 public class PlayerStateController : MonoBehaviour {
 
+	public int Level = 0;
 	public float StartSpeed = 80f;
-	public int Health;
+	public int StartHealth;
 	public int CollectionHealthIncrease;
-	public int IdleHealthDegrease;
-	public int CollisionHealthDegrease;
+	public int IdleHealthDecrease;
+	public int CollisionHealthDecrease;
+
+	public float TimerIdleHealthDecrease;
+	private float TimerIdleHealthDecreaseCount;
 
 
-	private int level = 0;
+
 	private int collectionPoints = 0;
-
 	private float speed;
+	private PlayerCamController playerCam;
+	private int health;
 
 
 	// Use this for initialization
 	void Start () {
+		playerCam = GameObject.FindWithTag ("PlayerCam").GetComponent<PlayerCamController>();
 
-		setSpeed (StartSpeed);
-
+		health = StartHealth;
+		SetSpeed (StartSpeed);
+		TimerIdleHealthDecreaseCount = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-//		Debug.Log (GameRules.LevelConditions[2]);
-//		Debug.Log (speed);
+
+		TimerIdleHealthDecreaseCount += Time.deltaTime;
+
+		// decrease health in intervals
+		if (TimerIdleHealthDecreaseCount > TimerIdleHealthDecrease) {
+			DecreaseHealth(IdleHealthDecrease);
+			TimerIdleHealthDecreaseCount = 0;
+		}
 
 		// TODO degreas live value in smallll amounts --> prevent endless "doing nothing"
 	}
 
-	void setSpeed(float newSpeed) {
+	void SetSpeed(float newSpeed) {
 		speed = newSpeed;
-
-		// TODO set speed for cam
+		playerCam.MaxSpeed = speed;
 	}
 
-	void collectSpirit() {
-		// TODO increase my live value
-		// TODO add the collections points --> test if i can level up
+	void DecreaseHealth(int amount) {
+		health -= amount;
+		Debug.Log ("healt down! "+health);
+
+		// TODO check if dead!!
+		if (health <= 0) {
+			Debug.Log ("DEAAAAD");
+		}
 	}
 
-	void takeDamage() {
-		// TODO degrease live value about certain amount
+	void IncreaseHealth(int amount) {
+
+		if (health + amount <= StartHealth) {
+			health += amount;
+		} else {
+			health = StartHealth;
+		}
+
+		Debug.Log ("healt up! "+health);	
 	}
 
-	public void collideWithSpirit(GameObject spirit) {
-		SpiritStateController spiritState = spirit.GetComponent<SpiritStateController>();
+	void CollectSpirit(SpiritStateController spiritState) {
 
-		// TODO, check if i can collect it (am i at the correct level?
+		// reset idle health decrease timer
+		TimerIdleHealthDecreaseCount = 0;
 
+		// increase my live value
+		IncreaseHealth (CollectionHealthIncrease);
+
+		// add the collections points
 		collectionPoints += spiritState.CollectionsPoints;
 
-		Debug.Log ("Player now has " +collectionPoints +" Collection Points");
+		Debug.Log ("Spirit collected!! Points: "+collectionPoints+ " ||| needed next: "+GameRules.LevelConditions [Level + 1]);
+
+		// TODO test if i can leven up
+		if (collectionPoints >= GameRules.LevelConditions [Level + 1]) {
+			LevelUp();
+		}
+
+		// trigger Spirit destruction
+		spiritState.GetCollected ();
+	}
+
+	void LevelUp() {
+		Level += 1;
+
+		// TODO chenge visuals of character - to represent level
+		// TODO level up animation?
+
+		// TODO Test if max level is reached!
+
+		Debug.Log ("Level UP! " + Level);
+	}
+
+	public void TakeDamage() {
+		// degrease live value by certain amount
+		DecreaseHealth(CollisionHealthDecrease);
+
+		// TODO damage animation
+		Debug.Log ("DAMAAAAAGE");
+	}
+
+
+	public void CollideWithSpirit(GameObject spirit) {
+
+		SpiritStateController spiritState = spirit.GetComponent<SpiritStateController>();
+
+		// check if i can collect the Spirit (by LEVEL)
+		if (spiritState.Level <= Level) {
+			CollectSpirit (spiritState);
+		// i cant, so take collision damge (to large Spirit)
+		} else {
+			TakeDamage();
+		}
+
 	}
 }

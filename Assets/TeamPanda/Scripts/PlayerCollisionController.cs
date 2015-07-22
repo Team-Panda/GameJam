@@ -21,8 +21,11 @@ public class PlayerCollisionController : MonoBehaviour {
 		// check if collisionTarget is a Spirit
 		if (other.gameObject.GetComponent<SpiritStateController> ()) {
 			// then dispatch to state controller
-			playerState.collideWithSpirit(other.gameObject);
-
+			playerState.CollideWithSpirit (other.gameObject);
+		// colliding  with environtment etc.
+		} else {
+			playerState.TakeDamage();
 		}
+
 	}
 }

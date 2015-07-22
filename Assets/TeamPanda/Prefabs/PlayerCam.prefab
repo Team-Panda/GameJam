@@ -411,7 +411,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adc48a7ba01dd9499015012d292641e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartSpeed: 80
+  level: 1
+  StartSpeed: 50
+  StartHealth: 200
+  CollectionHealthIncrease: 10
+  IdleHealthDecrease: 5
+  CollisionHealthDecrease: 50
+  TimerIdleHealthDecrease: 3
 --- !u!114 &11470210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,7 +429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7aeaeb09095e04894ce1089b99ccd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 80
   velocity: 2
   yawSpeed: 150
   tiltSpeed: 100
