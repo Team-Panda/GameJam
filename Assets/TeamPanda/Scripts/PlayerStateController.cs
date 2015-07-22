@@ -5,6 +5,7 @@ public class PlayerStateController : MonoBehaviour {
 
 	public int Level = 0;
 	public float StartSpeed = 80f;
+	public float SpeedIncrease = 40f;
 	public int StartHealth;
 	public int CollectionHealthIncrease;
 	public int IdleHealthDecrease;
@@ -95,12 +96,18 @@ public class PlayerStateController : MonoBehaviour {
 	void LevelUp() {
 		Level += 1;
 
-		// TODO chenge visuals of character - to represent level
+		// TODO change visuals of character - to represent level
 		// TODO level up animation?
 
-		// TODO Test if max level is reached!
+		// increase speed
+		SetSpeed (speed + SpeedIncrease);
 
 		Debug.Log ("Level UP! " + Level);
+
+		// TODO Test if max level is reached!
+		if (Level > GameRules.MaxLevel) {
+			Debug.Log ("EEEEEEEEEEEEEEEEEEEEND - You Won!");
+		}
 	}
 
 	public void TakeDamage() {
