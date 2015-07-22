@@ -12,14 +12,15 @@ public class SpiritCollisionController : MonoBehaviour
 	
 	}
 
-	void OnTriggerEnter(Collider other) 
+	void OnCollisionEnter(Collision other) 
 	{
-		
+
 		// stoße ich mit einem Spirit zusammen
 		if (other.gameObject.GetComponent<SpiritStateController> ()) 
 		{
 		
-			spiritState.collideWithSpirit(other.gameObject);
+			Debug.Log("Colliding");
+			spiritState.collideWithSpirit(other.gameObject,other.contacts[0]);
 
 		}
 	}

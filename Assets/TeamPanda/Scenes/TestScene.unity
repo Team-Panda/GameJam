@@ -87,6 +87,48 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &308882246
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 475314, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -16.0235081
+      objectReference: {fileID: 0}
+    - target: {fileID: 475314, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.6329241
+      objectReference: {fileID: 0}
+    - target: {fileID: 475314, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1260.14563
+      objectReference: {fileID: 0}
+    - target: {fileID: 475314, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475314, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475314, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475314, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475314, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &533295868
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,16 +156,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7516c10e411a34438311317fc5a875b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 2
   turn: 3
   b:
-    xMin: 0
+    xMin: 1
     xMax: 0
     yMin: 0
     yMax: 0
     zMin: 0
     zMax: 0
-  SpiritObject: {fileID: 165964, guid: 70aa854b6d25530468fb65cab93216cc, type: 2}
+  SpiritObject: {fileID: 195922, guid: ddedb7ff225cc574d93e5c1e58c7ec2c, type: 2}
   spiritsArray: []
 --- !u!4 &533295870
 Transform:
@@ -132,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 533295868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -249,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7516c10e411a34438311317fc5a875b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 2
   turn: 5
   b:
     xMin: 0
@@ -258,7 +300,7 @@ MonoBehaviour:
     yMax: 0
     zMin: 0
     zMax: 0
-  SpiritObject: {fileID: 163374, guid: 89df1640504e03b46b0c10b6075d2fbc, type: 2}
+  SpiritObject: {fileID: 195922, guid: ddedb7ff225cc574d93e5c1e58c7ec2c, type: 2}
   spiritsArray: []
 --- !u!4 &1391243746
 Transform:
@@ -267,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1391243744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 2, z: 0}
+  m_LocalPosition: {x: -0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

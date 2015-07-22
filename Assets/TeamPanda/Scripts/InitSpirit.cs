@@ -30,34 +30,35 @@ public class InitSpirit : MonoBehaviour {
 		for (int i = 0; i < spiritsArray.Length; i++) {
 
 			GameObject clone = (GameObject)Instantiate(SpiritObject, transform.position + new Vector3 (Random.value, Random.value, Random.value), Quaternion.identity);
+
+			Vector3 moving = new Vector3 (Random.value, Random.value, Random.value);
+			
+
+				
+				Rigidbody rb = clone.GetComponent <Rigidbody>();
+				
+				rb.velocity = moving * speed;
+				
+				rb.position = new Vector3
+					(
+						Mathf.Clamp (rb.position.x, b.xMin, b.xMax),
+						Mathf.Clamp (rb.position.y, b.yMin, b.yMax),
+						Mathf.Clamp (rb.position.z, b.zMin, b.zMax)
+						);
+				
+				rb.angularVelocity = Random.insideUnitSphere * turn;
+				//Debug.Log (rb.angularVelocity);
+
+
 			spiritsArray [i]= clone;
 
-			Debug.Log(transform.position);
+			//Debug.Log(transform.position);
 		
-		}
+
+
+	
 	}
-
-
-	void fixedUpdate (){
- 
-		Vector3 moving = new Vector3 (Random.value, Random.value, Random.value);
-
-		foreach (GameObject obj in spiritsArray){
-
-		Rigidbody rb = obj.GetComponent <Rigidbody>();
-			
-		rb.velocity = moving * speed;
-
-		rb.position = new Vector3
-			(
-				Mathf.Clamp (rb.position.x, b.xMin, b.xMax),
-				Mathf.Clamp (rb.position.y, b.yMin, b.yMax),
-				Mathf.Clamp (rb.position.z, b.zMin, b.zMax)
-			);
-
-		rb.angularVelocity = Random.insideUnitSphere * turn;
 
 	}
 
-}
 }
