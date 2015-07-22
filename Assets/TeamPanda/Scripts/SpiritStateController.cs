@@ -26,6 +26,12 @@ public class SpiritStateController : MonoBehaviour {
 				return;
 			}
 
+			if (Level >= GameRules.MaxLevel) {
+				
+				return;
+				
+			}
+
 			otherSpiritState.canCallFusion = false ;
 			//Debug.Log("TEST");
 

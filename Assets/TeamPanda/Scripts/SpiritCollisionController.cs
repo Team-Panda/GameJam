@@ -15,7 +15,7 @@ public class SpiritCollisionController : MonoBehaviour
 	void OnCollisionEnter(Collision other) 
 	{
 
-		// stoße ich mit einem Spirit zusammen
+		// stoße ich mit einem Spirit zusammen?
 		if (other.gameObject.GetComponent<SpiritStateController> ()) 
 		{
 		
