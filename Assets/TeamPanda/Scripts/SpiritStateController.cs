@@ -22,10 +22,10 @@ public class SpiritStateController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	}
-
-
-
-
-
+	// gets called if the player collects (eats) this spirit
+	public void GetCollected() {
+		// TODO play collections animation??
+		Destroy (this);
+	}
 }
 

@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerPositioning : MonoBehaviour {
 
 	public float viewDistance = 5f;
+	public float topOffset = 2f;
 	public float minSpeedMultiplier = 1f;
 	public float maxSpeedMultiplier = 4f;
 
@@ -33,6 +34,9 @@ public class PlayerPositioning : MonoBehaviour {
 		// organic random "drift"
 		targetPos.x += Random.Range (-swayXMax, swayXMax); 
 		targetPos.y += Random.Range (-swayYMax, swayYMax); 
+
+		// add viewport shift to get a top-view feeling
+		targetPos.y -= topOffset;
 
 		transform.position =  Vector3.SmoothDamp(transform.position, targetPos, ref swayVelocity, swaySmoothTime);
 
