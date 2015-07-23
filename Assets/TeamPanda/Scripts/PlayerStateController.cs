@@ -27,6 +27,7 @@ public class PlayerStateController : MonoBehaviour {
 	private PlayerCamController playerCam;
 	private PlayerStateVisualizer playerStateVisualizer;
 	private GameController gameController;
+	private WorldArchitectureController wac;
 	private int health;
 
 
@@ -35,6 +36,7 @@ public class PlayerStateController : MonoBehaviour {
 		playerCam = GameObject.FindWithTag ("PlayerCam").GetComponent<PlayerCamController>();
 		playerStateVisualizer = GetComponent<PlayerStateVisualizer> ();
 		gameController = GameObject.FindWithTag ("GameController").GetComponent<GameController>();
+		wac = GameObject.FindWithTag ("WorldArchitecture").GetComponent<WorldArchitectureController>();
 		audioSource = GetComponent<AudioSource> ();
 
 		health = StartHealth;
@@ -121,6 +123,9 @@ public class PlayerStateController : MonoBehaviour {
 
 		//play sound
 		audioSource.PlayOneShot (levelUpSound);
+
+		// trigger world architecture event
+		wac.WorldLevelEvent (Level);
 
 		Debug.Log ("Level UP! " + Level);
 

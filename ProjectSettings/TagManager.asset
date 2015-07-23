@@ -8,6 +8,7 @@ TagManager:
   - PlayerCam
   - PlayerModel
   - GameOverScreen
+  - WorldArchitecture
   layers:
   - Default
   - TransparentFX

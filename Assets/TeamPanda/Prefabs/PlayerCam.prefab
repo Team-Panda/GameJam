@@ -871,15 +871,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adc48a7ba01dd9499015012d292641e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 10
+  Level: 0
   StartSpeed: 60
   SpeedIncrease: 40
   StartHealth: 200
   CollectionHealthIncrease: 10
   IdleHealthDecrease: 5
   CollisionHealthDecrease: 50
-  collectSound: {fileID: 0}
-  levelUpSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: c7a787d58f637454591ff852a8c4a0c5, type: 3}
+  damageSound: {fileID: 8300000, guid: 06ef200027a5a7c408d627a3e70619e9, type: 3}
+  levelUpSound: {fileID: 8300000, guid: e3bcadd562a667d4b9e49d86885f57e5, type: 3}
   TimerIdleHealthDecrease: 3
 --- !u!114 &11469866
 MonoBehaviour:
@@ -981,7 +982,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194156}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.01999998
