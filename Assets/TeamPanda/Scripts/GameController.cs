@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour {
 			gameOverTimerCount += Time.deltaTime;
 
 			if(gameOverTimerCount > gameOverTimer) {
-				Debug.Log ("OOOOOOVER");
+				Application.LoadLevel (0);  
 			}
 		}
 	

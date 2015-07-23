@@ -340,14 +340,6 @@ Prefab:
       propertyPath: StartHealth
       value: 200
       objectReference: {fileID: 0}
-    - target: {fileID: 103844, guid: cd08d47a83c022341b08744eb5917465, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22351684, guid: cd08d47a83c022341b08744eb5917465, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd08d47a83c022341b08744eb5917465, type: 2}
   m_IsPrefabParent: 0
