@@ -53,7 +53,7 @@ public class PlayerStateController : MonoBehaviour {
 		if (TimerIdleHealthDecreaseCount > TimerIdleHealthDecrease) {
 			DecreaseHealth(IdleHealthDecrease);
 			TimerIdleHealthDecreaseCount = 0;
-			LevelUp();
+			//LevelUp();
 		}
 
 		// TODO degreas live value in smallll amounts --> prevent endless "doing nothing"

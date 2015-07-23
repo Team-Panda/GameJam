@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 0
+  canCallFusion: 1
 --- !u!23 &295208650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -456,6 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 0
+  canCallFusion: 1
 --- !u!23 &1887356524
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -542,6 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 0
+  canCallFusion: 1
 --- !u!23 &2121667717
 MeshRenderer:
   m_ObjectHideFlags: 0

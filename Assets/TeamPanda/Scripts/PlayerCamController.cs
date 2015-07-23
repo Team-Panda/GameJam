@@ -60,8 +60,10 @@ public class PlayerCamController : MonoBehaviour {
 			currentSpeed =  currentSpeed - velocity;
 		}
 
-		Vector3 newPos = transform.position + transform.forward * Time.deltaTime * currentSpeed;
-		transform.position = newPos;
+//		Vector3 newPos = transform.position + transform.forward * Time.deltaTime * currentSpeed;
+//		transform.position = newPos;
+
+		transform.position = transform.position + transform.forward * Time.deltaTime * currentSpeed;
 
 		// adjust player turning angle
 		playerPos.transform.localRotation = Quaternion.Euler( pitch * playerPos.turnAngle , yaw * playerPos.turnAngle, 0); 

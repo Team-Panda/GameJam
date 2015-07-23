@@ -4,11 +4,13 @@ using System.Collections;
 public class SpiritCollisionController : MonoBehaviour 
 {
 	private SpiritStateController spiritState;
+	private Rigidbody rb;
 
 	void Start ()
 	{
 	
 		spiritState = GetComponent <SpiritStateController> ();
+		rb = GetComponent<Rigidbody> ();
 	
 	}
 
@@ -30,6 +32,15 @@ public class SpiritCollisionController : MonoBehaviour
 		if (other.gameObject.tag == "SpiritBoundingBox") {
 			Destroy (this.gameObject);
 		}
+
+	}
+
+	public void DriftTo(GameObject target) {
+
+		Vector3 targetPos = target.transform.position;
+		Vector3 targetDir = transform.position + targetPos * 0.02f;
+		Debug.Log (targetDir);
+		rb.AddForce (targetDir);
 
 	}
 }

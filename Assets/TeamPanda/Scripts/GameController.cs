@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour {
 
 			if(gameOverTimerCount > gameOverTimer) {
 				Application.LoadLevel(Application.loadedLevel);
+				gameOverTimerCount = 0f;
 			}
 		}
 	

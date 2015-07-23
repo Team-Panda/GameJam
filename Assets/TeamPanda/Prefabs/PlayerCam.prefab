@@ -297,6 +297,7 @@ GameObject:
   - 114: {fileID: 11465022}
   - 114: {fileID: 11427082}
   - 82: {fileID: 8287240}
+  - 135: {fileID: 13561134}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -441,8 +442,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109768}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: .0361397415, y: -.880327642, z: -.067968972, w: -.468078464}
+  m_LocalPosition: {x: -402, y: 4, z: 270}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449814}
@@ -944,7 +945,7 @@ MonoBehaviour:
   topOffset: .649999976
   minSpeedMultiplier: 1
   maxSpeedMultiplier: 4
-  turnAngle: 70
+  turnAngle: 80
   swayXMax: 2.5
   swayYMax: 2.5
   swayPause: 5
@@ -975,6 +976,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171002}
   m_Enabled: 1
+--- !u!135 &13561134
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 12.7799997
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &13593900
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -985,7 +998,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.01999998
+  m_Radius: 2.38000011
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13783990
 SkinnedMeshRenderer:
