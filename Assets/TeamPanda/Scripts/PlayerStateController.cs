@@ -20,6 +20,7 @@ public class PlayerStateController : MonoBehaviour {
 	private float speed;
 	private PlayerCamController playerCam;
 	private PlayerStateVisualizer playerStateVisualizer;
+	private GameController gameController;
 	private int health;
 
 
@@ -27,6 +28,7 @@ public class PlayerStateController : MonoBehaviour {
 	void Start () {
 		playerCam = GameObject.FindWithTag ("PlayerCam").GetComponent<PlayerCamController>();
 		playerStateVisualizer = GetComponent<PlayerStateVisualizer> ();
+		gameController = GameObject.FindWithTag ("GameController").GetComponent<GameController>();
 
 		health = StartHealth;
 		SetSpeed (StartSpeed);
@@ -42,7 +44,7 @@ public class PlayerStateController : MonoBehaviour {
 		if (TimerIdleHealthDecreaseCount > TimerIdleHealthDecrease) {
 			DecreaseHealth(IdleHealthDecrease);
 			TimerIdleHealthDecreaseCount = 0;
-			LevelUp();
+			//LevelUp();
 		}
 
 		// TODO degreas live value in smallll amounts --> prevent endless "doing nothing"
@@ -60,6 +62,7 @@ public class PlayerStateController : MonoBehaviour {
 		// TODO check if dead!!
 		if (health <= 0) {
 			Debug.Log ("DEAAAAD");
+			gameController.GameOver();
 		}
 	}
 
