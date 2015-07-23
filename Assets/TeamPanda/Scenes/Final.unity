@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
   m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
   m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
-  m_AmbientIntensity: .656000018
+  m_AmbientIntensity: .630999982
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 2100000, guid: f452e20d4a4ec5f49a054c0645c36c2e, type: 2}
   m_HaloStrength: .5
@@ -112,15 +112,15 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: .994726181, g: 1, b: .904411793, a: 1}
-  m_Intensity: .800000012
+  m_Color: {r: .984178483, g: 1, b: .911764681, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
-    m_Strength: .610000014
+    m_Strength: .286000013
     m_Bias: .0500000007
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
@@ -183,11 +183,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 427606, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 427606, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 205
       objectReference: {fileID: 0}
     - target: {fileID: 427606, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
       propertyPath: m_LocalPosition.z
@@ -215,7 +215,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 109232, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540012, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
+      propertyPath: m_Size.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540012, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
+      propertyPath: m_Size.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540012, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
+      propertyPath: m_Size.z
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 427606, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.16416943
+      objectReference: {fileID: 0}
+    - target: {fileID: 427606, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.16416907
+      objectReference: {fileID: 0}
+    - target: {fileID: 427606, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.16416907
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 270ad615db941bf47aa3f0f3e2738730, type: 2}
@@ -261,7 +285,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11468934, guid: cd08d47a83c022341b08744eb5917465, type: 2}
       propertyPath: TimerIdleHealthDecrease
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd08d47a83c022341b08744eb5917465, type: 2}
@@ -304,6 +328,10 @@ Prefab:
     - target: {fileID: 472228, guid: dd29c505fc55fc94db3cbc132df2c6c0, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376376, guid: dd29c505fc55fc94db3cbc132df2c6c0, type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd29c505fc55fc94db3cbc132df2c6c0, type: 2}

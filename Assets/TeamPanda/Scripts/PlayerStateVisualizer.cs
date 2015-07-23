@@ -38,12 +38,14 @@ public class PlayerStateVisualizer : MonoBehaviour {
 	public void setLevelUp(int currentLevel) {
 		// TODO level up animation?
 
-	
-		// set color according to level
-		Color newColor = GameRules.LevelColors [currentLevel];
-		setColor(newColor);
+		if(currentLevel <= GameRules.MaxLevel) {
+			// set color according to level
+			Color newColor = GameRules.LevelColors [currentLevel];
+			setColor(newColor);
+			
+			transform.localScale = startScale + scaleIncrease * currentLevel;
+		}
 
-		transform.localScale = startScale + scaleIncrease * currentLevel;
 	}
 
 }
