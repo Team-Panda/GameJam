@@ -6,10 +6,30 @@ ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Dummy001
+    100004: Dummy002
+    100006: Line001
+    100008: Line002
+    100010: Sphere001
     400000: //RootNode
+    400002: Dummy001
+    400004: Dummy002
+    400006: Line001
+    400008: Line002
+    400010: Sphere001
     2300000: //RootNode
+    2300002: Line001
+    2300004: Line002
+    2300006: Sphere001
     3300000: //RootNode
+    3300002: Line001
+    3300004: Line002
+    3300006: Sphere001
     4300000: Rectangle001
+    4300002: Sphere001
+    4300004: Line001
+    4300006: Line002
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -30,7 +50,45 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: Dummy001/Line001
+        weight: 1
+      - path: Dummy002
+        weight: 1
+      - path: Dummy002/Line002
+        weight: 1
+      - path: Sphere001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

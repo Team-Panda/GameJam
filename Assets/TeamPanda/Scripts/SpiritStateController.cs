@@ -57,7 +57,7 @@ public class SpiritStateController : MonoBehaviour {
 	// gets called if the player collects (eats) this spirit
 	public void GetCollected() {
 		// TODO play collections animation??
-		Destroy (this);
+		Destroy (this.gameObject);
 	}
 }
 
