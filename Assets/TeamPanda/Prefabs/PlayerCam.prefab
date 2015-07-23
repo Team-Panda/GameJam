@@ -746,8 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08acad77efb04642890ceee43f5f0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartScale: .400000006
-  ScaleIncrease: .200000003
+  StartScale: .349999994
+  ScaleIncrease: .170000002
 --- !u!114 &11433976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -872,16 +872,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 0
-  StartSpeed: 60
-  SpeedIncrease: 40
+  StartSpeed: 50
+  SpeedIncrease: 15
   StartHealth: 200
   CollectionHealthIncrease: 10
-  IdleHealthDecrease: 5
+  IdleHealthDecrease: 3
   CollisionHealthDecrease: 50
   collectSound: {fileID: 8300000, guid: c7a787d58f637454591ff852a8c4a0c5, type: 3}
   damageSound: {fileID: 8300000, guid: 06ef200027a5a7c408d627a3e70619e9, type: 3}
   levelUpSound: {fileID: 8300000, guid: e3bcadd562a667d4b9e49d86885f57e5, type: 3}
-  TimerIdleHealthDecrease: 3
+  TimerIdleHealthDecrease: 10
 --- !u!114 &11469866
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -120,7 +120,7 @@ Light:
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
-    m_Strength: .286000013
+    m_Strength: .379000008
     m_Bias: .0500000007
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
@@ -283,9 +283,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11468934, guid: cd08d47a83c022341b08744eb5917465, type: 2}
-      propertyPath: TimerIdleHealthDecrease
-      value: 10
+    - target: {fileID: 11489398, guid: cd08d47a83c022341b08744eb5917465, type: 2}
+      propertyPath: turnAngle
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd08d47a83c022341b08744eb5917465, type: 2}
