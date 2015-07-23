@@ -20,6 +20,7 @@ public class PlayerCamController : MonoBehaviour {
 	}
 
 	private Rigidbody rb;
+	private PlayerPositioning playerPos;
 	private Transform vrHead;
 	private float maxSpeed = 0f;
 	private float currentSpeed = 0f;
@@ -29,6 +30,7 @@ public class PlayerCamController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		playerPos = GameObject.FindWithTag ("Player").GetComponent<PlayerPositioning>();
 		vrHead = transform.FindChild ("VROneSDKHead");
 	}
 	
@@ -40,10 +42,13 @@ public class PlayerCamController : MonoBehaviour {
 		Vector3 localVrHeadForward = transform.InverseTransformDirection (vrHead.forward);
 		Vector3 localZ = transform.InverseTransformDirection (transform.forward);
 
+		float yaw = HeadYaw (localZ, localVrHeadForward);
+		float pitch = HeadPitch (localZ, localVrHeadForward);
+		float tilt = HeadTilt ();
 
-		transform.Rotate (Vector3.up * HeadYaw (localZ, localVrHeadForward) * yawSpeed * Time.deltaTime);
-		transform.Rotate (Vector3.right * HeadPitch (localZ, localVrHeadForward) * pitchSpeed * Time.deltaTime);
-		transform.Rotate (Vector3.forward * HeadTilt () * tiltSpeed * Time.deltaTime);
+		transform.Rotate (Vector3.up * yaw * yawSpeed * Time.deltaTime);
+		transform.Rotate (Vector3.right * pitch * pitchSpeed * Time.deltaTime);
+		transform.Rotate (Vector3.forward * tilt * tiltSpeed * Time.deltaTime);
 
 
 		// increase speed to maxspeed
@@ -58,7 +63,8 @@ public class PlayerCamController : MonoBehaviour {
 		Vector3 newPos = transform.position + transform.forward * Time.deltaTime * currentSpeed;
 		transform.position = newPos;
 
-
+		// adjust player turning angle
+		playerPos.transform.localRotation = Quaternion.Euler( pitch * playerPos.turnAngle , yaw * playerPos.turnAngle, 0); 
 
 	}
 

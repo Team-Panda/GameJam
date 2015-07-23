@@ -7,6 +7,7 @@ public class PlayerPositioning : MonoBehaviour {
 	public float topOffset = 2f;
 	public float minSpeedMultiplier = 1f;
 	public float maxSpeedMultiplier = 4f;
+	public float turnAngle = 15f;
 
 	public float swayXMax = 1f;
 	public float swayYMax = 1f;

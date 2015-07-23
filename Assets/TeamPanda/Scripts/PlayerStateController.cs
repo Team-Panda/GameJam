@@ -19,12 +19,14 @@ public class PlayerStateController : MonoBehaviour {
 	private int collectionPoints = 0;
 	private float speed;
 	private PlayerCamController playerCam;
+	private PlayerStateVisualizer playerStateVisualizer;
 	private int health;
 
 
 	// Use this for initialization
 	void Start () {
 		playerCam = GameObject.FindWithTag ("PlayerCam").GetComponent<PlayerCamController>();
+		playerStateVisualizer = GetComponent<PlayerStateVisualizer> ();
 
 		health = StartHealth;
 		SetSpeed (StartSpeed);
@@ -40,6 +42,7 @@ public class PlayerStateController : MonoBehaviour {
 		if (TimerIdleHealthDecreaseCount > TimerIdleHealthDecrease) {
 			DecreaseHealth(IdleHealthDecrease);
 			TimerIdleHealthDecreaseCount = 0;
+			LevelUp();
 		}
 
 		// TODO degreas live value in smallll amounts --> prevent endless "doing nothing"
@@ -96,8 +99,8 @@ public class PlayerStateController : MonoBehaviour {
 	void LevelUp() {
 		Level += 1;
 
-		// TODO change visuals of character - to represent level
-		// TODO level up animation?
+		// change visuals of character - to represent level
+		playerStateVisualizer.setLevelUp (Level);
 
 		// increase speed
 		SetSpeed (speed + SpeedIncrease);
