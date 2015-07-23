@@ -176,7 +176,7 @@ MonoBehaviour:
     yMax: 3
     zMin: 2
     zMax: 4
-  SpiritObject: {fileID: 139232, guid: 55ed5adb0e4c81d47b71220e3803d7c0, type: 2}
+  SpiritObject: {fileID: 165964, guid: 70aa854b6d25530468fb65cab93216cc, type: 2}
 --- !u!4 &162554504
 Transform:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
     yMax: 3
     zMin: 2
     zMax: 6
-  SpiritObject: {fileID: 132046, guid: 9fe9e85b456d8cc4fa4f3711161286d4, type: 2}
+  SpiritObject: {fileID: 165964, guid: 70aa854b6d25530468fb65cab93216cc, type: 2}
 --- !u!4 &173073540
 Transform:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 464526, guid: cd08d47a83c022341b08744eb5917465, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -106.739998
       objectReference: {fileID: 0}
     - target: {fileID: 464526, guid: cd08d47a83c022341b08744eb5917465, type: 2}
       propertyPath: m_LocalRotation.x
@@ -429,6 +429,46 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2083553313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2083553315}
+  - 65: {fileID: 2083553314}
+  m_Layer: 0
+  m_Name: SpiritBoundingBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2083553314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2083553313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2083553315
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2083553313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 3, z: 0}
+  m_LocalScale: {x: .179033875, y: .179033875, z: .179033875}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &2091956501
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +504,7 @@ MonoBehaviour:
     yMax: 4
     zMin: 6
     zMax: 4
-  SpiritObject: {fileID: 163374, guid: 89df1640504e03b46b0c10b6075d2fbc, type: 2}
+  SpiritObject: {fileID: 165964, guid: 70aa854b6d25530468fb65cab93216cc, type: 2}
 --- !u!4 &2091956503
 Transform:
   m_ObjectHideFlags: 0

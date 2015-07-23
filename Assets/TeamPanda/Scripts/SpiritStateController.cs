@@ -21,15 +21,12 @@ public class SpiritStateController : MonoBehaviour {
 		{
 			//nur wenn sie den gleichen Level haben, darf ein neuer Spirit entstehen
 			if (Level != spirit.GetComponent<SpiritStateController>().Level){
-
-				Debug.Log("LEVEL");
+				//Debug.Log("LEVEL");
 				return;
 			}
 
-			if (Level >= GameRules.MaxLevel) {
-				
-				return;
-				
+			if (Level >= GameRules.MaxLevel) {			
+				return;			
 			}
 
 			otherSpiritState.canCallFusion = false ;
@@ -44,7 +41,7 @@ public class SpiritStateController : MonoBehaviour {
 
 		}
 		
-		Debug.Log ("colliding with spirit");
+		//Debug.Log ("colliding with spirit");
 	}
 
 	// Use this for initialization

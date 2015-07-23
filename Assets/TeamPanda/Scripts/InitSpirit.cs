@@ -30,7 +30,7 @@ public class InitSpirit : MonoBehaviour {
 
 			GameObject clone = (GameObject)Instantiate(SpiritObject, transform.position + new Vector3 (Random.value, Random.value, Random.value), Quaternion.identity);
 
-			Debug.Log("Create");
+			//Debug.Log("Create");
 
 			Vector3 moving = new Vector3 (Random.Range(-b.xMin,b.xMax),Random.Range(-b.yMin,b.yMax),Random.Range(-b.zMin,b.zMax));
 				
