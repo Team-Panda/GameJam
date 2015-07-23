@@ -16,16 +16,29 @@ public class PlayerCollisionController : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider other) {
-
+	void OnCollisionEnter(Collision other) {
+		
 		// check if collisionTarget is a Spirit
 		if (other.gameObject.GetComponent<SpiritStateController> ()) {
 			// then dispatch to state controller
 			playerState.CollideWithSpirit (other.gameObject);
-		// colliding  with environtment etc.
+			// colliding  with environtment etc.
 		} else {
 			playerState.TakeDamage();
 		}
-
+		
 	}
+
+//	void OnTriggerEnter(Collider other) {
+//
+//		// check if collisionTarget is a Spirit
+//		if (other.gameObject.GetComponent<SpiritStateController> ()) {
+//			// then dispatch to state controller
+//			playerState.CollideWithSpirit (other.gameObject);
+//		// colliding  with environtment etc.
+//		} else {
+//			playerState.TakeDamage();
+//		}
+//
+//	}
 }

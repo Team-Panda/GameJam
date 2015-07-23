@@ -11,8 +11,11 @@ public class PlayerStateController : MonoBehaviour {
 	public int IdleHealthDecrease;
 	public int CollisionHealthDecrease;
 
-	public AudioSource collectSound;
-	public AudioSource levelUpSound;
+	public AudioClip collectSound;
+	public AudioClip damageSound;
+	public AudioClip levelUpSound;
+
+	private AudioSource audioSource;
 
 	public float TimerIdleHealthDecrease;
 	private float TimerIdleHealthDecreaseCount;
@@ -32,8 +35,7 @@ public class PlayerStateController : MonoBehaviour {
 		playerCam = GameObject.FindWithTag ("PlayerCam").GetComponent<PlayerCamController>();
 		playerStateVisualizer = GetComponent<PlayerStateVisualizer> ();
 		gameController = GameObject.FindWithTag ("GameController").GetComponent<GameController>();
-		collectSound = GetComponent<AudioSource> ();
-		levelUpSound = GetComponent<AudioSource> ();
+		audioSource = GetComponent<AudioSource> ();
 
 		health = StartHealth;
 		SetSpeed (StartSpeed);
@@ -49,7 +51,7 @@ public class PlayerStateController : MonoBehaviour {
 		if (TimerIdleHealthDecreaseCount > TimerIdleHealthDecrease) {
 			DecreaseHealth(IdleHealthDecrease);
 			TimerIdleHealthDecreaseCount = 0;
-			//LevelUp();
+			LevelUp();
 		}
 
 		// TODO degreas live value in smallll amounts --> prevent endless "doing nothing"
@@ -94,7 +96,8 @@ public class PlayerStateController : MonoBehaviour {
 		collectionPoints += spiritState.CollectionsPoints;
 
 		// play sound
-		collectSound.PlayOneShot (collectSound.clip);
+		audioSource.PlayOneShot (collectSound);
+
 
 		Debug.Log ("Spirit collected!! Points: "+collectionPoints+ " ||| needed next: "+GameRules.LevelConditions [Level + 1]);
 
@@ -117,7 +120,7 @@ public class PlayerStateController : MonoBehaviour {
 		SetSpeed (speed + SpeedIncrease);
 
 		//play sound
-		levelUpSound.PlayOneShot (collectSound.clip);
+		audioSource.PlayOneShot (levelUpSound);
 
 		Debug.Log ("Level UP! " + Level);
 
@@ -130,6 +133,10 @@ public class PlayerStateController : MonoBehaviour {
 	public void TakeDamage() {
 		// degrease live value by certain amount
 		DecreaseHealth(CollisionHealthDecrease);
+
+		// damage sound
+		// play sound
+		audioSource.PlayOneShot (damageSound);
 
 		// TODO damage animation
 		Debug.Log ("DAMAAAAAGE");
