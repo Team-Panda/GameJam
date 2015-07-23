@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 482428}
   - 137: {fileID: 13783990}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: PlayerModel
+  m_TagString: PlayerModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,6 +243,7 @@ GameObject:
   - 54: {fileID: 5475332}
   - 114: {fileID: 11468934}
   - 114: {fileID: 11465022}
+  - 114: {fileID: 11427082}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -574,6 +575,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83af1711446b7404ea6d257e5ba09025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11427082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08acad77efb04642890ceee43f5f0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartScale: .600000024
+  ScaleIncrease: .200000003
 --- !u!114 &11433976
 MonoBehaviour:
   m_ObjectHideFlags: 1
