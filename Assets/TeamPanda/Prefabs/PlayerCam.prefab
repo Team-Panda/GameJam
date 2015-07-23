@@ -879,6 +879,7 @@ MonoBehaviour:
   IdleHealthDecrease: 5
   CollisionHealthDecrease: 50
   collectSound: {fileID: 0}
+  levelUpSound: {fileID: 0}
   TimerIdleHealthDecrease: 3
 --- !u!114 &11469866
 MonoBehaviour:

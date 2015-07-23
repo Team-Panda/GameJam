@@ -12,6 +12,7 @@ public class PlayerStateController : MonoBehaviour {
 	public int CollisionHealthDecrease;
 
 	public AudioSource collectSound;
+	public AudioSource levelUpSound;
 
 	public float TimerIdleHealthDecrease;
 	private float TimerIdleHealthDecreaseCount;
@@ -32,6 +33,7 @@ public class PlayerStateController : MonoBehaviour {
 		playerStateVisualizer = GetComponent<PlayerStateVisualizer> ();
 		gameController = GameObject.FindWithTag ("GameController").GetComponent<GameController>();
 		collectSound = GetComponent<AudioSource> ();
+		levelUpSound = GetComponent<AudioSource> ();
 
 		health = StartHealth;
 		SetSpeed (StartSpeed);
@@ -113,6 +115,9 @@ public class PlayerStateController : MonoBehaviour {
 
 		// increase speed
 		SetSpeed (speed + SpeedIncrease);
+
+		//play sound
+		levelUpSound.PlayOneShot (collectSound.clip);
 
 		Debug.Log ("Level UP! " + Level);
 
