@@ -11,6 +11,8 @@ public class PlayerStateController : MonoBehaviour {
 	public int IdleHealthDecrease;
 	public int CollisionHealthDecrease;
 
+	public AudioSource collectSound;
+
 	public float TimerIdleHealthDecrease;
 	private float TimerIdleHealthDecreaseCount;
 
@@ -29,6 +31,7 @@ public class PlayerStateController : MonoBehaviour {
 		playerCam = GameObject.FindWithTag ("PlayerCam").GetComponent<PlayerCamController>();
 		playerStateVisualizer = GetComponent<PlayerStateVisualizer> ();
 		gameController = GameObject.FindWithTag ("GameController").GetComponent<GameController>();
+		collectSound = GetComponent<AudioSource> ();
 
 		health = StartHealth;
 		SetSpeed (StartSpeed);
@@ -87,6 +90,9 @@ public class PlayerStateController : MonoBehaviour {
 
 		// add the collections points
 		collectionPoints += spiritState.CollectionsPoints;
+
+		// play sound
+		collectSound.PlayOneShot (collectSound.clip);
 
 		Debug.Log ("Spirit collected!! Points: "+collectionPoints+ " ||| needed next: "+GameRules.LevelConditions [Level + 1]);
 
