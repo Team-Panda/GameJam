@@ -878,7 +878,7 @@ MonoBehaviour:
   StartHealth: 200
   CollectionHealthIncrease: 10
   IdleHealthDecrease: 3
-  CollisionHealthDecrease: 50
+  CollisionHealthDecrease: 250
   collectSound: {fileID: 8300000, guid: c7a787d58f637454591ff852a8c4a0c5, type: 3}
   damageSound: {fileID: 8300000, guid: 06ef200027a5a7c408d627a3e70619e9, type: 3}
   levelUpSound: {fileID: 8300000, guid: e3bcadd562a667d4b9e49d86885f57e5, type: 3}
@@ -998,7 +998,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6.1500001
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13783990
 SkinnedMeshRenderer:

@@ -631,13 +631,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11468934, guid: cd08d47a83c022341b08744eb5917465, type: 2}
       propertyPath: CollisionHealthDecrease
-      value: 250
+      value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 13593900, guid: cd08d47a83c022341b08744eb5917465, type: 2}
-      propertyPath: m_Radius
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5475332, guid: cd08d47a83c022341b08744eb5917465, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cd08d47a83c022341b08744eb5917465, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1277712979
