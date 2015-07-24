@@ -5,12 +5,14 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
 	public GameObject [] spiritPrefabs;
+	public int MaxSpiritCount = 200;
 
 	private bool isGameOver = false;
 	private float gameOverTimer = 3f;
 	private float gameOverTimerCount = 0f;
 
 	private GameObject gameOverCanvas;
+	private int spiritCount = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -46,5 +48,17 @@ public class GameController : MonoBehaviour {
 		isGameOver = true;
 		gameOverCanvas.SetActive (true);
 
+	}
+
+	public bool canCreateSpirit() {
+		return  spiritCount < MaxSpiritCount;
+	}
+
+	public void incSpiritCount() {
+		spiritCount += 1;
+	}
+
+	public void decSpiritCount() {
+		spiritCount -= 1;
 	}
 }

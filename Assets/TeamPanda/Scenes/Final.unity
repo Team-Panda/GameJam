@@ -147,6 +147,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &265569810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 265569811}
+  - 114: {fileID: 265569812}
+  m_Layer: 0
+  m_Name: Emitter3-high (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &265569811
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265569810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -88, y: -149, z: 225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 434523798}
+  m_RootOrder: 9
+--- !u!114 &265569812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265569810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7516c10e411a34438311317fc5a875b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  b:
+    xMin: 10
+    xMax: 10
+    yMin: 10
+    yMax: 10
+    zMin: 10
+    zMax: 10
+  SpiritObject: {fileID: 169070, guid: 65e5512c5f84e254ea95868427fbbca5, type: 2}
 --- !u!1 &331456239
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +277,7 @@ Transform:
   - {fileID: 635606331}
   - {fileID: 1242687563}
   - {fileID: 437520059}
+  - {fileID: 265569811}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &437520058
@@ -580,9 +629,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11468934, guid: cd08d47a83c022341b08744eb5917465, type: 2}
+      propertyPath: CollisionHealthDecrease
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 13593900, guid: cd08d47a83c022341b08744eb5917465, type: 2}
       propertyPath: m_Radius
-      value: 4.42000008
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd08d47a83c022341b08744eb5917465, type: 2}
@@ -768,6 +821,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11478712, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
+      propertyPath: MaxSpiritCount
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1846deedd99b16945b33b08d6e032491, type: 2}
   m_IsPrefabParent: 0
@@ -800,7 +857,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1

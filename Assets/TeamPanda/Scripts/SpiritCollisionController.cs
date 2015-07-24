@@ -19,8 +19,7 @@ public class SpiritCollisionController : MonoBehaviour
 
 		// stoße ich mit einem Spirit zusammen?
 		if (other.gameObject.GetComponent<SpiritStateController> ()) 
-		{
-		
+		{	
 			//Debug.Log("Colliding");
 			spiritState.collideWithSpirit(other.gameObject,other.contacts[0]);
 
@@ -30,7 +29,7 @@ public class SpiritCollisionController : MonoBehaviour
 	void OnTriggerExit(Collider other) {
 
 		if (other.gameObject.tag == "SpiritBoundingBox") {
-			Destroy (this.gameObject);
+			spiritState.destroy();
 		}
 
 	}

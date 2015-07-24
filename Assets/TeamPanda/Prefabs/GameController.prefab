@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 114900, guid: 92020cb8e078d3f4bb9388b9bcc08620, type: 2}
   - {fileID: 162708, guid: 6c55d82d819f90b49b5b1c1097381032, type: 2}
   - {fileID: 123440, guid: 0941fb8c2b1a9414d827a418e640f0b2, type: 2}
+  MaxSpiritCount: 50
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

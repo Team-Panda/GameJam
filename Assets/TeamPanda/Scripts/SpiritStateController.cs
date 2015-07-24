@@ -33,11 +33,11 @@ public class SpiritStateController : MonoBehaviour {
 			//Debug.Log("TEST");
 
 			// ein Spirit wird zerstört
-			Destroy(spirit);
+			spirit.GetComponent<SpiritStateController>().destroy();
 
 			GC.FuseSpirits(Level, contact.point);
 
-			Destroy(this.gameObject);
+			destroy();
 
 		}
 		
@@ -57,6 +57,11 @@ public class SpiritStateController : MonoBehaviour {
 	// gets called if the player collects (eats) this spirit
 	public void GetCollected() {
 		// TODO play collections animation??
+		Destroy (this.gameObject);
+	}
+
+	public void destroy() {
+		GC.decSpiritCount ();
 		Destroy (this.gameObject);
 	}
 }
